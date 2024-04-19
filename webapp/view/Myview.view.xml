@@ -1,0 +1,47 @@
+<mvc:View
+    controllerName="appui5.controller.Myview"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+>
+    <VBox id="id_Vbox">
+        <Label
+            id="id_num1"
+            labelFor="id_input1"
+            text="Enter the first Number"
+        />
+        <Input
+            id="id_input1"
+            type="Number"
+            placeholder="Enter first number"
+            width="25vw"
+        />
+
+        <Label
+            id="id_num2"
+            labelFor="id_input2"
+            text="Enter the first Number"
+        />
+        <Input
+            id="id_input2"
+            type="Number"
+            placeholder="Enter second number"
+            width="25vw"
+        />
+    </VBox>
+
+    <!-- <VBox id="id_Vbox_btn"> -->
+    <Button
+        id="id_btn1"
+        class="button"
+        text="oMYJSON"
+        press="myJsonModel"
+    />
+    <Button
+        id="id_btn2"
+        type="Default"
+        text="Calculate"
+        press="onClick_Calculate"
+    />
+    <!-- </VBox> -->
+</mvc:View>
