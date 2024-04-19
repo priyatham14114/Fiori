@@ -7,7 +7,7 @@ sap.ui.define([
      */
     function (Controller,Jsonmodel) {
         "use strict";
-
+        
         return Controller.extend("appui5.controller.Myview", {
 
             button_Click: () => {
@@ -27,7 +27,7 @@ sap.ui.define([
                 console.log(Result);
 
                 console.log();
-                
+
                 alert(Result);
 
             },
