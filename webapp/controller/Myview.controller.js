@@ -5,17 +5,18 @@ sap.ui.define([
     /**
      * @param {typeof sap.ui.core.mvc.Controller} Controller
      */
-    function (Controller,Jsonmodel) {
+    function (Controller, Jsonmodel) {
         "use strict";
-        
+
         return Controller.extend("appui5.controller.Myview", {
 
-            onInit: function(eve){
+            onInit: function (eve) {
 
             },
-            onSubmitData: function(){
-               const Actors = this.getView().getModel().getProperty("/Actors/1")
-               console.log(Actors);
+            onSubmitData: function (eve) {
+                debugger
+                const Actors = this.getView().getModel().setProperty("/Actors/1")
+                console.log(Actors);
             }
 
         });
