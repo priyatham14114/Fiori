@@ -5,57 +5,14 @@
     xmlns="sap.m"
     xmlns:l="sap.ui.layout"
     xmlns:f="sap.ui.layout.form"
->
-    <Table
-        items="{/Employee/}"
-        alternateRowColors="true"
-        growing="true"
-        growingThreshold="5"
-        growingScrollToLoad="true"
+>   
 
-    >
-        <columns>   <!--DEFINES THE ELEMENTS INSIDE THIS ELEMENT ARE COLOUMS-->
-            <Column>     <!--ELEMENT THAT DEFINES WE ARE CREATING A COLUMN-->
-                <header>    <!--TO MAKE THE COLUMN HEADER-->
-                    <Title text="Employee Name" />  <!--NAME OF THE COLUMN-->
-                </header>
-            </Column>
-            <Column>
-                <header>
-                    <Title text="Employee DOB" />
-                </header>
-            </Column>
-            <Column>
-                <header>
-                    <Title text="Employee Email" />
-                </header>
-            </Column>
-            <Column>
-                <header>
-                    <Title text="Employee Gender" />
-                </header>
-            </Column>
-            <Column>
-                <header>
-                    <Title text="Mobile No" />
-                </header>
-            </Column>
-            <Column>
-                <header>
-                    <Title text="City" />
-                </header>
-            </Column>
-        </columns>
-        <items> <!--TO WRAP THE COLUMN ITEMS (DATA)-->
-            <ColumnListItem> <!--DEFINES LIST THE WE WANT TO DISPLAY-->
-                <Text text="{fName} {lName}" />
-                <Text text="{DOB}" />
-                <Text visible="false" text="{email}" />
-                <Text text="{gender}" />
-                <Text visible="false" text="{phone}" />
-                <Text text="{address/0/city}" />
-
-            </ColumnListItem>
-        </items>
-    </Table>
+    <l:VerticalLayout id="idVerticalLayout" binding="{/Actors/1}">
+        <Input value="{fName}" editable="false" />
+        <Input value="{age}" editable="false"/>
+        <Input value="{Born At}" editable="false"/>
+        <Input value="{DOB}" editable="false"/>
+        <Image src="{photo}" />
+        <Button text="Submit" press="onSubmitData"/>
+    </l:VerticalLayout>
 </mvc:View>
