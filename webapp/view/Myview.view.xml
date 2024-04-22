@@ -3,98 +3,59 @@
     xmlns:mvc="sap.ui.core.mvc"
     displayBlock="true"
     xmlns="sap.m"
->   
-<VBox id="id_Vbox" class = "form_Style">
-    <HBox id="id_Hbox">
-        <Label
-            class = "lable_Style"
-            id="id_Label_Name"
-            labelFor="id_Name"
-            text="Student Name"
-        />
-        <Input
-            id="id_Name"
-            class = "input_Ele"
-            value="{/Student/name}"
-            type="Text"
-            placeholder="Student Name"
-            width="25vw"
-        />
-    </HBox>
-    <HBox id="id_Hbox2">
-        <Label
-        class="lable_Style"
-            id="id_Label_Age"
-            labelFor="id_Age"
-            text="Student Age"
-        />
-        <Input
-            id="id_Age"
-            class = "input_Ele"
-            value="{/Student/age}"
-            type="Number"
-            placeholder="Student Age"
-            width="25vw"
-        />
-    </HBox>
-    <HBox id="id_Hbox3">
-        <Label
-        class="lable_Style"
-            id="id_Label_HomeTown"
-            labelFor="id_HomeTown"
-            text="Town"
-        />
-        <Input
-            id="id_HomeTown"
-            value="{/address/homeTown}"
-            class = "input_Ele"
-            type="Text"
-            placeholder="Home Town"
-            width="25vw"
-        />
-    </HBox>
-    <HBox id="id_Hbox4">
-        <Label
-            class="lable_Style"
-            id="id_Label_State"
-            labelFor="id_HomeTown"
-            text="State"
-        />
-        <Input
-            id="id_State"
-            type="Text"
-            value="{secondModel>/address/state}"
-            placeholder="State"
-            class = "input_Ele"
-            width="25vw"
-        />
-    </HBox>
-    <HBox id="id_Hbox5">
-        <Label
-        class="lable_Style"
-            id="id_LabelCountry"
-            labelFor="id_HomeTown"
-            text="Country"
-        />
-        <Input
-            id="id_Country"
-            value="{secondModel>/address/country}"
-            type="Text"
-            placeholder="Country"
-            width="25vw"
-        />
-    </HBox>
-     <!-- <Button
-        id="id_btn1"
-        class="button"
-        text="oMYJSON"
-        press="myJsonModel"
-    />
-    <Button
-        id="id_btn2"
-        type="Default"
-        text="Calculate"
-        press="onClick_Calculate"
-    /> -->
-</VBox>
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form"
+>
+    <Table
+        items="{/Employee/}"
+        alternateRowColors="true"
+        growing="true"
+        growingThreshold="5"
+        growingScrollToLoad="true"
+
+    >
+        <columns>   <!--DEFINES THE ELEMENTS INSIDE THIS ELEMENT ARE COLOUMS-->
+            <Column>     <!--ELEMENT THAT DEFINES WE ARE CREATING A COLUMN-->
+                <header>    <!--TO MAKE THE COLUMN HEADER-->
+                    <Title text="Employee Name" />  <!--NAME OF THE COLUMN-->
+                </header>
+            </Column>
+            <Column>
+                <header>
+                    <Title text="Employee DOB" />
+                </header>
+            </Column>
+            <Column>
+                <header>
+                    <Title text="Employee Email" />
+                </header>
+            </Column>
+            <Column>
+                <header>
+                    <Title text="Employee Gender" />
+                </header>
+            </Column>
+            <Column>
+                <header>
+                    <Title text="Mobile No" />
+                </header>
+            </Column>
+            <Column>
+                <header>
+                    <Title text="City" />
+                </header>
+            </Column>
+        </columns>
+        <items> <!--TO WRAP THE COLUMN ITEMS (DATA)-->
+            <ColumnListItem> <!--DEFINES LIST THE WE WANT TO DISPLAY-->
+                <Text text="{fName} {lName}" />
+                <Text text="{DOB}" />
+                <Text visible="false" text="{email}" />
+                <Text text="{gender}" />
+                <Text visible="false" text="{phone}" />
+                <Text text="{address/0/city}" />
+
+            </ColumnListItem>
+        </items>
+    </Table>
 </mvc:View>
