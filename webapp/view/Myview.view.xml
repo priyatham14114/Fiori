@@ -6,13 +6,24 @@
     xmlns:l="sap.ui.layout"
     xmlns:f="sap.ui.layout.form"
 >   
-
+    <l:HorizontalLayout >
     <l:VerticalLayout id="idVerticalLayout" binding="{/Actors/1}">
-        <Input value="{fName}" editable="false" />
-        <Input value="{age}" editable="false"/>
+        <Input value="{=${fName}.toUpperCase()}" editable="false" />
+
+        <Input value="{age}" editable= "{= ${age} > 30 ? false : true }"/>
+
+        <Text text="age only editable if the age is > 10 or > 30 or equal to 54"/>
+
+        <Input value="{age}" editable= "{= ${age} > 10 || ${age} > 30 || ${age} === 54 ? true : false}"/>
+
+        <Text text="age only editable if the age is > 10 AND > 30 AND equal to 53 should satisfy all the conditions"/>
+        <Input value="{age}" editable= "{= ${age} > 10 &amp;&amp; ${age} > 30 &amp;&amp; ${age} === 53 ? true : false}"/>
+        
         <Input value="{Born At}" editable="false"/>
         <Input value="{DOB}" editable="false"/>
-        <Image src="{photo}" />
         <Button text="Submit" press="onSubmitData"/>
     </l:VerticalLayout>
+        <Image height="40vh" src="{/Actors/1/photo}" />
+      </l:HorizontalLayout>
+
 </mvc:View>
